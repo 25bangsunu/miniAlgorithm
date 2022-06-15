@@ -19,3 +19,4 @@ for _ in 1...n[0] {
 for _ in 1...n[1] {
     print(arr.joined())
 }
+
