@@ -1,23 +1,22 @@
 //
-//  핸드폰 번호 가리기.swift
+//  main.swift
 //  레벨 1
 //
-//  Created by 방선우 on 2022/06/17.
+//  Created by 방선우 on 2022/06/21.
 //
 
 import Foundation
 
-//MARK: 핸드폰 번호 가리기
-// 조건 : 번호 자리수는 4이상 20이하
+//MARK: 하샤드 수
 
-func solution(_ phone_number:String) -> String {
-    var num: String = ""
+func solution(_ x:Int) -> Bool {
+    let d: [Int] = [10000, 1000, 100, 10]
+    var result: Int = x
+    var a = 0
     
-    if phone_number.count == 4 {
-        num = phone_number
-    } else {
-         return phone_number.replacingOccurrences(of: phone_number[phone_number.startIndex...phone_number.index(phone_number.endIndex, offsetBy: -5)], with: String(repeating: "*", count: phone_number.count - 4))
+    for i in d {
+        a += result / i
+        result = x % i
     }
-    return num
+    return x % (a + result) == 0
 }
-
